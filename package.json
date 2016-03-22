@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Test blog for react rendered site with github pages.",
   "scripts": {
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run gh-pages",
+    "gh-pages": "gh-pages -d build -b gh-pages",
     "stats": "webpack --profile --json > stats.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
