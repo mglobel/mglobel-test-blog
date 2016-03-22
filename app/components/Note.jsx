@@ -1,3 +1,3 @@
 import React from 'react';
 
-export default () => <div>Learn Webpack</div>;
+export default () => <div style={{display: 'flex', justifyContent: 'center'}}><div>Learn This</div></div>;
