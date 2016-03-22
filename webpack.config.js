@@ -18,8 +18,6 @@ const PATHS = {
 
 process.env.BABEL_ENV = TARGET;
 
-ghpages.publish(path.join(__dirname, 'build'), function(err) { ... });
-
 const common = {
   entry: {
     app: PATHS.app,
