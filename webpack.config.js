@@ -49,6 +49,8 @@ const common = {
   ]
 };
 
+// needed for deploy..
+
 // Default configuration
 if(TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {

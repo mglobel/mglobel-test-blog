@@ -11,7 +11,8 @@ import Bookshelf from './components/Bookshelf.jsx';
 {/* const NoMatch = React.createClass({render: <div>Learn Webpack</div>;})*/}
 
 render((
-  <Router history={browserHistory}>
+  {/* giving an error during build <Router history={browserHistory}> */}
+  <Router>
     <Route path='/' component={Home}>
       {/* <Route path='llc' component={Llc}> */}
     </Route>
