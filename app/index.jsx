@@ -1,5 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import { render } from 'react-dom';
+import { Router, Route, Link, browserHistory } from 'react-router'
 
-ReactDOM.render(<App />, document.getElementById('app'));
+{/* views */}
+import Home from './views/Home.jsx';
+
+{/* show case components */}
+import Bookshelf from './components/Bookshelf.jsx';
+
+{/* const NoMatch = React.createClass({render: <div>Learn Webpack</div>;})*/}
+
+render((
+  <Router history={browserHistory}>
+    <Route path='/' component={Home}>
+      {/* <Route path='llc' component={Llc}> */}
+    </Route>
+    <Route path='bookshelf' component={Bookshelf} />
+
+    {/* <Route path='*' component={NoMatch} /> */}
+  </Router>
+
+), document.getElementById('app'));

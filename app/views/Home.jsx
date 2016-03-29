@@ -1,5 +1,5 @@
 import React from 'react';
-import Note from './Note.jsx';
+import Bookshelf from '../components/Bookshelf.jsx';
 
 var wrapperStyle = {
   display: 'flex',
@@ -41,7 +41,7 @@ var llcInfoStyle = {
   flexShrink: '1'
 }
 
-export default class App extends React.Component {
+class Home extends React.Component {
   render() {
     return (
       <div style={wrapperStyle}>
@@ -71,8 +71,10 @@ export default class App extends React.Component {
             <img style={{maxWidth: '150px', maxHeight: '150px'}} src="http://mglobel.com/assets/llc-icon.png" />
           </div>
         </div>
-
+        <Bookshelf />
       </div>
-    );
+    )
   }
 }
+
+export default Home;
