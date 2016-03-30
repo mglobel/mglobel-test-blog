@@ -45,20 +45,16 @@ class Home extends React.Component {
   render() {
     return (
       <div style={wrapperStyle}>
-
-
         <div style={headerStyle}>
           <span>
             <h2>MGLobel</h2>
           </span>
           <a href="#" style={linkStyle}>Start a Project</a>
         </div>
-
         <div style={heroStyle}>
           <h1>Software developer and business strategist.</h1>
           <h2>Crafting lean technology solutions since 2011.</h2>
         </div>
-
         <div style={pageContentStyle}>
           <div style={llcInfoStyle}>
             <div>
@@ -70,8 +66,9 @@ class Home extends React.Component {
             </div>
             <img style={{maxWidth: '150px', maxHeight: '150px'}} src="http://mglobel.com/assets/llc-icon.png" />
           </div>
+          <hr />
+          <Bookshelf />
         </div>
-        <Bookshelf />
       </div>
     )
   }

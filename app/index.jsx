@@ -9,16 +9,12 @@ import Home from './views/Home.jsx';
 import Bookshelf from './components/Bookshelf.jsx';
 
 {/* const NoMatch = React.createClass({render: <div>Learn Webpack</div>;})*/}
+{/* <Route path='*' component={NoMatch} /> */}
 
 {/* giving an error during build <Router history={browserHistory}> */}
 render((
   <Router>
-    <Route path='/' component={Home}>
-      {/* <Route path='llc' component={Llc}> */}
-    </Route>
+    <Route path='/' component={Home} />
     <Route path='bookshelf' component={Bookshelf} />
-
-    {/* <Route path='*' component={NoMatch} /> */}
   </Router>
-
 ), document.getElementById('app'));
