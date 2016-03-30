@@ -1,3 +1,21 @@
 body {
   background: rgba(89,62,11,.6);
 }
+
+// below should be dynamically included with the bookshelf
+// component
+.ais-search-box input {
+  min-width: 175px;
+  min-height: 25px;
+}
+
+.ais-hits {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.ais-hits--item {
+  min-height: 100px;
+  min-width: 100px;
+}

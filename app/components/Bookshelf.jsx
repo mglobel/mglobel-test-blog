@@ -1,6 +1,12 @@
 import React from 'react';
 import instantsearch from 'instantsearch.js';
 
+var searchBoxStyles = {
+  display: 'flex',
+  justifyContent: 'center',
+  padding: '20px'
+}
+
 class Bookshelf extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +24,7 @@ class Bookshelf extends React.Component {
         placeholder: 'Search for books on the shelf...'
       })
     );
-    
+
     this.search.addWidget(
       instantsearch.widgets.hits({
         container: '#hits-container',
@@ -35,8 +41,9 @@ class Bookshelf extends React.Component {
   render() {
     return(
       <div>
-        <div id="search-box" style={{display: 'none'}}></div>
+        <div id="search-box" style={searchBoxStyles}></div>
         <div id="hits-container"></div>
+        <a href="https://www.algolia.com/" style={searchBoxStyles}>Powered by Algolia</a>
       </div>
     );
   }
