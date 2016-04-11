@@ -4,14 +4,14 @@ import Bookshelf from '../components/Bookshelf.jsx';
 var wrapperStyle = {
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'space-around'
+  justifyContent: 'space-around',
 };
 
 var headerStyle = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  backgroundColor: '#A62E44',
+  backgroundColor: '#525252',
   flexBasis: '95%',
   justifyContent: 'space-between',
   padding: '10px 20px 10px 20px',
@@ -24,7 +24,7 @@ var linkStyle = {
 
 var heroStyle = {
   textAlign: 'center',
-  backgroundColor: 'rgba(89, 2, 18, 0.5)',
+  backgroundColor: '#829B40',
   color: '#F5F0F0',
   flexBasis: '12em',
   padding: '10px 20px 10px 20px',
@@ -33,6 +33,7 @@ var heroStyle = {
 
 var pageContentStyle = {
   backgroundColor: '#FFF5E7',
+  padding: '20px'
 };
 
 var llcInfoStyle = {
@@ -54,6 +55,7 @@ class Home extends React.Component {
         <div style={heroStyle}>
           <h1>Software developer and business strategist.</h1>
           <h2>Crafting lean technology solutions since 2011.</h2>
+          // put a btn here?? that triggers a contact form?
         </div>
         <div style={pageContentStyle}>
           <div style={llcInfoStyle}>
