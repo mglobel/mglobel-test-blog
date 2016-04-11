@@ -1,5 +1,6 @@
 import React from 'react';
 import Bookshelf from '../components/Bookshelf.jsx';
+import ContactForm from '../components/ContactForm.jsx'
 
 var wrapperStyle = {
   display: 'flex',
@@ -43,6 +44,18 @@ var llcInfoStyle = {
 }
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display_form: 'none'
+    };
+    this.triggerContactModal = this.triggerContactModal.bind(this);
+  }
+
+  triggerContactModal() {
+    this.setState({display_form: 'block'})
+  }
+
   render() {
     return (
       <div style={wrapperStyle}>
@@ -55,7 +68,7 @@ class Home extends React.Component {
         <div style={heroStyle}>
           <h1>Software developer and business strategist.</h1>
           <h2>Crafting lean technology solutions since 2011.</h2>
-          // put a btn here?? that triggers a contact form?
+          <button onClick={this.triggerContactModal}>Learn More</button>
         </div>
         <div style={pageContentStyle}>
           <div style={llcInfoStyle}>
@@ -64,12 +77,14 @@ class Home extends React.Component {
               <p>Get a fresh perspective and creative solutions with MGLobel LLC
               technology consulting. Offering on-site and remote services that will
               help push your business or non-profit forward in the modern age.</p>
-              <button>Learn More</button>
             </div>
             <img style={{maxWidth: '150px', maxHeight: '150px'}} src="http://mglobel.com/assets/llc-icon.png" />
           </div>
           <hr />
           <Bookshelf />
+          <div style={{display: this.state.display_form}}>
+            <ContactForm />
+          </div>
         </div>
       </div>
     )
