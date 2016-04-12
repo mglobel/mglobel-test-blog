@@ -47,43 +47,45 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      display_form: 'none'
+      displayForm: 'none'
     };
     this.triggerContactModal = this.triggerContactModal.bind(this);
   }
 
   triggerContactModal() {
-    this.setState({display_form: 'block'})
+    this.setState({displayForm: 'block'})
   }
 
   render() {
     return (
-      <div style={wrapperStyle}>
-        <div style={headerStyle}>
-          <span>
-            <h2>MGLobel</h2>
-          </span>
-          <a href="#" style={linkStyle}>Start a Project</a>
+      <div>
+        <div style={{display: this.state.displayForm}}>
+          <ContactForm />
         </div>
-        <div style={heroStyle}>
-          <h1>Software developer and business strategist.</h1>
-          <h2>Crafting lean technology solutions since 2011.</h2>
-          <button onClick={this.triggerContactModal}>Learn More</button>
-        </div>
-        <div style={pageContentStyle}>
-          <div style={llcInfoStyle}>
-            <div>
-              <h3>Find your organization's center</h3>
-              <p>Get a fresh perspective and creative solutions with MGLobel LLC
-              technology consulting. Offering on-site and remote services that will
-              help push your business or non-profit forward in the modern age.</p>
-            </div>
-            <img style={{maxWidth: '150px', maxHeight: '150px'}} src="http://mglobel.com/assets/llc-icon.png" />
+        <div style={wrapperStyle}>
+          <div style={headerStyle}>
+            <span>
+              <h2>MGLobel</h2>
+            </span>
+            <a href="#" style={linkStyle}>Start a Project</a>
           </div>
-          <hr />
-          <Bookshelf />
-          <div style={{display: this.state.display_form}}>
-            <ContactForm />
+          <div style={heroStyle}>
+            <h1>Software developer and business strategist.</h1>
+            <h2>Crafting lean technology solutions since 2011.</h2>
+            <button onClick={this.triggerContactModal}>Learn More</button>
+          </div>
+          <div style={pageContentStyle}>
+            <div style={llcInfoStyle}>
+              <div>
+                <h3>Find your organization's center</h3>
+                <p>Get a fresh perspective and creative solutions with MGLobel LLC
+                technology consulting. Offering on-site and remote services that will
+                help push your business or non-profit forward in the modern age.</p>
+              </div>
+              <img style={{maxWidth: '150px', maxHeight: '150px'}} src="http://mglobel.com/assets/llc-icon.png" />
+            </div>
+            <hr />
+            <Bookshelf />
           </div>
         </div>
       </div>
