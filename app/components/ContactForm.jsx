@@ -20,14 +20,27 @@ var modalContainerStyle = {
   margin: '15% auto',
   padding: '25px',
   border: '1px solid #888',
-  width: '80%'
+  width: '80%',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  maxWidth: '400px'
 }
 
 var modalCloseStyle = {
   color: '#aaa',
-  float: 'right',
   fontSize: '28px',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  paddingTop: '12px',
+  paddingLeft: '80px'
+}
+
+var formStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-around',
+  width: '95%',
+  minHeight: '220px'
 }
 
 class ContactForm extends React.Component {
@@ -35,9 +48,11 @@ class ContactForm extends React.Component {
     return(
       <div style={modalBackgroundStyle}>
         <div style={modalContainerStyle}>
-          <span style={modalCloseStyle}>x</span>
-          <h3>Ready to get in contact?</h3>
-          <form action='https://formspree.io/mglobel@gmail.com' method='POST'>
+          <div style={{display: 'flex', flexDirection: 'row'}}>
+            <h3>Ready to get in contact?</h3>
+            <span style={modalCloseStyle}>x</span>
+          </div>
+          <form style={formStyle} action='https://formspree.io/mglobel@gmail.com' method='POST'>
             <input
               name='name'
               type='text'
@@ -54,18 +69,20 @@ class ContactForm extends React.Component {
               placeholder='Phone (Optional)'
               required='true'/>
             <select name='organization-level' required='true'>
+              <option>Select the level of project...</option>
               <option value='personal-project'>Personal Project</option>
               <option value='startup'>Startup</option>
               <option value='small-business'>Small Business</option>
               <option value='enterprise'>Enterprise</option>
               <option value='not-for-profit'>Non-Profit/Community Initiative</option>
+              <option value='chat'>Just want to chat</option>
             </select>
+            <small>
+              You'll receive an email with a follow
+              up survey. I look forward to finding out more about what you're working on!
+            </small>
             <input type='submit' value='Get in Contact'/>
           </form>
-          <small>
-            You'll receive an email with some more information and follow
-            up questions. I look forward to discovering more about you're working on!
-          </small>
         </div>
       </div>
     );
