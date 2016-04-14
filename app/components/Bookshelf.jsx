@@ -7,6 +7,14 @@ var searchBoxStyles = {
   padding: '20px'
 }
 
+var bookTemplate = `
+<div style='background: url({{imageUrl}}); height: 300px; width: 200px; margin: 3px;'>
+  <div style='background-color: rgba(157,65,76,.7); height: 100%; width: 100%; color: #F5F0F0; text-align: center; display: flex; flex-direction: column; justify-content: center; font-family: sans-serif;'>
+    <a href="/#/book/{{permalink}}" style='color: #F5F0F0; font-size: 20px;'>{{title}}</a><br /> by {{{author}}}
+  </div>
+</div>
+`;
+
 class Bookshelf extends React.Component {
   constructor(props) {
     super(props);
@@ -31,8 +39,8 @@ class Bookshelf extends React.Component {
         hitsPerPage: 10,
         templates: {
           empty: 'No results',
-          item: '<a href="/#/book/{{permalink}}">{{title}}</a><br /> by {{{author}}}',
-        },
+          item: bookTemplate,
+        }
       })
     );
     this.search.start();
