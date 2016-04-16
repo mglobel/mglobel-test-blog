@@ -10,7 +10,6 @@ var wrapperStyle = {
 
 var headerStyle = {
   display: 'flex',
-  justifyContent: 'center',
   alignItems: 'center',
   backgroundColor: '#525252',
   flexBasis: '95%',
