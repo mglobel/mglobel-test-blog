@@ -44,13 +44,28 @@ var formStyle = {
 }
 
 class ContactForm extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      show: props.show
+    };
+  }
+  
+  static get defaultProps() {
+    return {
+      show: false
+    }
+  }
+  
   render() {
+    if(!this.props.show == true) return null;
+    
     return(
-      <div style={modalBackgroundStyle}>
+      <span class='clickBackground' style={modalBackgroundStyle} data-modal='true'>
         <div style={modalContainerStyle}>
           <div style={{display: 'flex', flexDirection: 'row'}}>
             <h3>Ready to get in contact?</h3>
-            <span style={modalCloseStyle}>x</span>
           </div>
           <form style={formStyle} action='https://formspree.io/mglobel@gmail.com' method='POST'>
             <input
@@ -84,7 +99,7 @@ class ContactForm extends React.Component {
             <input type='submit' value='Get in Contact'/>
           </form>
         </div>
-      </div>
+      </span>
     );
   }
 }

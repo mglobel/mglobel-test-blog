@@ -46,20 +46,35 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayForm: 'none'
+     show: false
     };
+
     this.triggerContactModal = this.triggerContactModal.bind(this);
+  }
+  
+  show() {
+    console.log('click')
+    this.setState({show: true})
+  }
+  
+  close(e) {
+    if(e.target.tagName==='SPAN') {
+      this.setState({show: false})
+    }
   }
 
   triggerContactModal() {
-    this.setState({displayForm: 'block'})
+    this.setState({displayForm: true})
   }
 
   render() {
     return (
       <div>
-        <div style={{display: this.state.displayForm}}>
-          <ContactForm />
+        <div onClick={this.close.bind(this)}>
+          <ContactForm 
+            ref='form'
+            show={this.state.show}
+          />
         </div>
         <div style={wrapperStyle}>
           <div style={headerStyle}>
@@ -71,7 +86,7 @@ class Home extends React.Component {
           <div style={heroStyle}>
             <h1>Software developer and business strategist.</h1>
             <h2>Crafting lean technology solutions since 2011.</h2>
-            <button onClick={this.triggerContactModal}>Learn More</button>
+            <button onClick={this.show.bind(this)}>Learn More</button>
           </div>
           <div style={pageContentStyle}>
             <div style={llcInfoStyle}>
